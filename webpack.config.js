@@ -9,43 +9,33 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        loaders: [
-          {
-            test: /\.js?$/,
-            exclude: /node_modules/,
-            loaders: ['react-hot', 'babel']
-          },
 
-          {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-          },
+        // Use es6 Javascript while hot loading
+        {
+          test: /\.js?$/,
+          exclude: /node_modules/,
+          loaders: ['react-hot', 'babel']
+        },
 
-          // CSS
-          {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader'
-          },
+        // For buildin static files that are to be es6-ified
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        },
 
-          // // LESS
-          // {
-          //   test: /\.jsx$/,
-          //   loader: 'jsx'
-          // },
-          //
-          // // LESS
-          // {
-          //   test: /\.less$/,
-          //   loader: 'style!css!less'
-          // },
+        // CSS
+        {
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
+        },
 
-          // SASS
-          {
-            test: /\.scss$/,
-            loader: 'style-loader!css-loader!sass-loader'
-          }
-        ]
+        // CSS
+        {
+          test: /\.scss$/,
+          loader: 'style-loader!css-loader!sass-loader'
+        }
+      ]
     },
     plugins: [
       new webpack.NoErrorsPlugin()

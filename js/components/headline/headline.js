@@ -1,10 +1,10 @@
 import React from 'react';
 
-let Header = React.createClass({
+var Headline = React.createClass({
 
   render() {
     return(<h1>Global Header</h1>);
   }
 });
 
-export default Header;
+export default Headline;
