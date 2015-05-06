@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 module.exports = {
     entry: [
-      'webpack/hot/dev-server',
+      'webpack/hot/only-dev-server',
       "./js/components/app/app.js"
     ],
     output: {
@@ -9,33 +9,31 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
+        loaders: [
+          {
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loaders: ['react-hot', 'babel']
+          },
 
-        // Use es6 Javascript while hot loading
-        {
-          test: /\.js?$/,
-          exclude: /node_modules/,
-          loaders: ['react-hot', 'babel']
-        },
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          },
 
-        // For buildin static files that are to be es6-ified
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader'
-        },
+          // CSS
+          {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+          },
 
-        // CSS
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader'
-        },
-
-        // CSS
-        {
-          test: /\.scss$/,
-          loader: 'style-loader!css-loader!sass-loader'
-        }
-      ]
+          // SASS
+          {
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader!sass-loader'
+          }
+        ]
     },
     plugins: [
       new webpack.NoErrorsPlugin()

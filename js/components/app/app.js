@@ -10,9 +10,6 @@ var App = React.createClass({
   render() {
     return (
       <div>
-        <Headline/>
-      </div>
-      <div>
         <Link to="app">Home</Link> <Link to="test">Test</Link>
         <RouteHandler/>
       </div>
