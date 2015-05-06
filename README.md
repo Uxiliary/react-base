@@ -4,25 +4,18 @@
 
 ```
 $ npm install
-$ webpack
-```
-
-## Dev
-
-```
-$ webpack -watch
 ```
 
 ## Production
 
 ```
-$ webpack -watch
+$ npm run build
 ```
 
-
 ## Run
+
 ```
 $ npm start
 ```
 
-`localhost:8080/webpack-dev-server/#/`
+localhost:8080/webpack-dev-server/#/
