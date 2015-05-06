@@ -1,0 +1,18 @@
+{
+  "name": "react-base",
+  "version": "0.0.0",
+  "main": "bundle.js",
+  "author": "Uxiliary",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.0.0",
+    "react": "^0.13.2",
+    "react-hot-loader": "^1.2.7",
+    "react-router": "^0.13.3",
+    "webpack": "^1.8.11",
+    "webpack-dev-server": "^1.8.2"
+  }
+}
