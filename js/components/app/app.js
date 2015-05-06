@@ -4,6 +4,7 @@ import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 import Headline from '../headline/headline.js';
 import Test from '../test/test.js';
+// import 'app.scss';
 
 var App = React.createClass({
   render() {

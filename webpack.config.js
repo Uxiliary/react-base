@@ -10,10 +10,41 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-            { test: /\.css$/, loader: "style!css" },
-            { test: /\.scss$/, loader: "style!css!sass" }
+          {
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loaders: ['react-hot', 'babel']
+          },
+
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          },
+
+          // CSS
+          {
+            test: /\.css$/,
+            loader: "style!css"
+          },
+
+          // LESS
+          {
+            test: /\.jsx$/,
+            loader: 'jsx'
+          },
+
+          // LESS
+          {
+            test: /\.less$/,
+            loader: 'style!css!less'
+          },
+
+          // SASS
+          {
+            test: /\.scss$/,
+            loader: 'style!css!sass'
+          }
         ]
     },
     plugins: [
