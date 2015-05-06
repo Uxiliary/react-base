@@ -25,25 +25,25 @@ module.exports = {
           // CSS
           {
             test: /\.css$/,
-            loader: "style!css"
+            loader: 'style-loader!css-loader'
           },
 
-          // LESS
-          {
-            test: /\.jsx$/,
-            loader: 'jsx'
-          },
-
-          // LESS
-          {
-            test: /\.less$/,
-            loader: 'style!css!less'
-          },
+          // // LESS
+          // {
+          //   test: /\.jsx$/,
+          //   loader: 'jsx'
+          // },
+          //
+          // // LESS
+          // {
+          //   test: /\.less$/,
+          //   loader: 'style!css!less'
+          // },
 
           // SASS
           {
             test: /\.scss$/,
-            loader: 'style!css!sass'
+            loader: 'style-loader!css-loader!sass-loader'
           }
         ]
     },
